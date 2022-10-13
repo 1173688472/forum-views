@@ -1,15 +1,20 @@
 <template>
-<div>
-  qwqw
-</div>
+
+    <topBar></topBar>
+
+      <router-view></router-view>
+
+
+
+
+
 </template>
 
-<script>
-export default {
-  name: "index"
-}
+<script setup>
+import topBar from "../components/topBar.vue"
 </script>
 
 <style scoped>
+
 
 </style>
