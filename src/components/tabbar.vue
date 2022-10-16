@@ -28,7 +28,7 @@ const props = defineProps({
     required: false
   }
 })
-const name = ref('全部')
+const name = ref('热门')
 name.value = props?.fristname
 watch(() => props.fristname, (v) => {
   name.value = v

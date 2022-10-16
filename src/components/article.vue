@@ -108,6 +108,8 @@
       </template>
     </a-comment>
   </a-comment>
+
+
 </template>
 
 <script setup>
@@ -115,11 +117,10 @@ import {ref} from "vue";
 import dayjs from 'dayjs';
 import {LikeFilled, LikeOutlined, DislikeFilled, DislikeOutlined} from '@ant-design/icons-vue';
 import relativeTime from 'dayjs/plugin/relativeTime';
-
 dayjs.extend(relativeTime);
 const likes = ref(0);
 const dislikes = ref(0);
-const action = ref < ('');
+const action = ref ('');
 const like = () => {
   likes.value = 1;
   dislikes.value = 0;
@@ -131,6 +132,12 @@ const dislike = () => {
   dislikes.value = 1;
   action.value = 'disliked';
 };
+
+
+const getContent = (val) => {
+  console.log(val)
+}
+
 </script>
 
 <style scoped>

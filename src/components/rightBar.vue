@@ -9,7 +9,7 @@
         </template>
         <template #actions>
           <setting-outlined key="setting"/>
-          <edit-outlined key="edit"/>
+          <edit-outlined key="edit" @click="toarticle"/>
           <ellipsis-outlined key="ellipsis"/>
         </template>
         <a-card-meta description="This is the description" title="Card title">
@@ -18,8 +18,8 @@
           </template>
         </a-card-meta>
       </a-card>
-      <a-card hoverable style="margin:1rem ">sddsds</a-card>
-      <a-card hoverable style="margin:1rem "> sdsdsd</a-card>
+      <a-card  style="margin:1rem ">sddsds</a-card>
+      <a-card  style="margin:1rem "> sdsdsd</a-card>
   </div>
 
   <!--  <a-card hoverable style="width: 240px">-->
@@ -34,6 +34,12 @@
 
 <script setup>
 import {SettingOutlined, EditOutlined, EllipsisOutlined} from '@ant-design/icons-vue';
+const toarticle = () => {
+  console.log('ww')
+}
+
+
+
 </script>
 
 <style scoped>

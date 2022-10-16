@@ -3,9 +3,9 @@
     <div style="width: 25%;"></div>
     <div class="continer_card" style="width: 50%;">
       <a-card style="margin:1rem 0;">
-        <tabBar :dataLsit="dataLsit" @clickEvent="wasClicked" fristname="热门" ></tabBar>
+        <tabBar :dataLsit="dataLsit" @clickEvent="wasClicked" fristname="打野" ></tabBar>
       </a-card>
-      <a-card hoverable style="margin:1rem 0;" v-for="i in 5">
+      <a-card  style="margin:1rem 0;" v-for="i in 5">
         <artiCle ></artiCle>
         <div style="height: 5rem;"></div>
       </a-card>

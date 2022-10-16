@@ -27,17 +27,17 @@
         <a-avatar :size="40" style="margin: 0 5rem" @click.prevent src="https://joeschmoe.io/api/v1/random" />
         <template #overlay>
           <a-menu @click="handleMenuClick" style="margin: 0 auto">
-            <a-menu-item key="1" style="margin: 0 1rem;">
-              <UserOutlined style="margin: 0.5rem;" />
+            <a-menu-item key="1" >
+              <UserOutlined  />
              我的文章
             </a-menu-item >
-            <a-menu-item key="2" style="margin: 0 1rem;">
-              <UserOutlined style="margin: 0.5rem;"/>
+            <a-menu-item key="2" >
+              <UserOutlined />
               我的收藏
             </a-menu-item>
-            <a-menu-item key="3" style="margin: 0 1rem;">
-              <UserOutlined style="margin: 0.5rem;"/>
-              退出登录
+            <a-menu-item key="3"  @click="getLogin">
+              <UserOutlined />
+              立即登录
             </a-menu-item>
           </a-menu>
         </template>
@@ -49,7 +49,12 @@
 <script setup>
 import { UserOutlined } from '@ant-design/icons-vue';
 import {ref} from "vue";
+import {useRouter} from "vue-router";
 
+const router=useRouter()
+const getLogin = () => {
+  router.push('/login')
+}
 </script>
 
 <style scoped>
@@ -73,7 +78,7 @@ import {ref} from "vue";
   border-color: #22ada9;
 }
 
-.container_search /deep/ :deep(.ant-input):focus {
+.container_search :deep(.ant-input):focus {
   border-color: #22ada9;
 }
 

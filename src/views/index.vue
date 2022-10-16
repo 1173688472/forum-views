@@ -1,11 +1,8 @@
 <template>
 
-    <topBar></topBar>
+  <topBar></topBar>
 
-      <router-view></router-view>
-
-
-
+  <router-view></router-view>
 
 
 </template>
