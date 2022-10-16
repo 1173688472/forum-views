@@ -5,7 +5,9 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 ## Recommended IDE Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
- # forum-views
+### 目录结构
+
+```
   ├─ .vscode                    # 编译器配置文件
   ├─ public                     # 静态资源
   ├─ src                        # 源码
@@ -33,3 +35,4 @@ This template should help get you started developing with Vue 3 in Vite. The tem
   ├─ README.md                  # Markdown文档
   ├─ .gitignore                 # git文件
   └─ vite.config.js             # vite 配置文件
+```
