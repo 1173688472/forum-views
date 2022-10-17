@@ -23,7 +23,7 @@ import rightBar from "../../components/rightBar.vue"
 import artiCle from "../../components/article.vue"
 import classBar from "../../components/classBar.vue"
 import tabBar from "../../components/tabbar.vue"
-import {ref} from "vue";
+import {computed, ref} from "vue";
 const dataLsit = ref([
   {name: '热门', key: '-1'},
   {name: '推荐', key: '1'},
@@ -37,6 +37,7 @@ const dataLsit = ref([
 const wasClicked = (e) => {
   console.log(e,'e')
 }
+
 </script>
 
 <style scoped>

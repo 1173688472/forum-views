@@ -32,6 +32,8 @@ import {reactive, ref} from "vue"
 import {useStore} from "vuex"
 import {useRouter} from "vue-router";
 
+
+
 const from = reactive({
   username: '',
   password: ''
@@ -43,12 +45,13 @@ const handleSubmit = () => {
   if (!from.username || !from.password) {
     message.error('账号和密码不能为空')
   } else {
-    // store.dispatch('login', {phone: form.phone, password: form.password}).then(res => {
-    //   message.success('登录成功！')
-    //   router.push('/page')
-    // }).finally(() => {
-    //   //请求结束之后
-    // })
+    store.dispatch('login', from).then(res => {
+      console.log(res,'resssq')
+      message.success('登录成功！')
+      router.push('/page')
+    }).finally(() => {
+      //请求结束之后
+    })
   }
 }
 
@@ -59,7 +62,7 @@ const handleSubmit = () => {
 
 <style >
 body {
-  background-image: url('../src/assets/img/baner.jpeg');
+  background-image: url('/src/assets/img/baner.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   /*background-attachment: fixed;*/
