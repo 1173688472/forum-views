@@ -80,6 +80,7 @@ const getOutIn = () => {
 .continers {
   display: flex;
   height: 50px;
+  width: 100%;
   background: white;
   align-items: center;
 }

@@ -7,8 +7,10 @@
       </a-card>
       <a-card  style="margin:1rem 0;" v-for="i in 5">
         <artiCle ></artiCle>
+
         <div style="height: 5rem;"></div>
       </a-card>
+      <btmBar style="width: 100%;text-align: center" ></btmBar>
       <div style="height: 5rem;"></div>
     </div>
     <div style="width: 25%;position: absolute;right: 10px">
@@ -23,6 +25,7 @@ import rightBar from "../../components/rightBar.vue"
 import artiCle from "../../components/article.vue"
 import classBar from "../../components/classBar.vue"
 import tabBar from "../../components/tabbar.vue"
+import btmBar from "../../components/bottombae.vue"
 import {computed, ref} from "vue";
 const dataLsit = ref([
   {name: '热门', key: '-1'},
@@ -43,6 +46,7 @@ const wasClicked = (e) => {
 <style scoped>
 .continer {
   height: 100%;
+  /*min-height: 100%;*/
   background: #f5f7fa;
   display: flex;
 }

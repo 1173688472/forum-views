@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="sss">
     <div class="login-box">
       <h2>欢迎登录</h2>
       <form>
@@ -23,6 +23,7 @@
         <a @click="$router.replace('/register')">注册 </a>
       </form>
     </div>
+    <btrBootm style="position: absolute;bottom: 0;width: 100%;text-align: center;"></btrBootm>
   </div>
 </template>
 
@@ -31,7 +32,7 @@ import {message} from 'ant-design-vue'
 import {reactive, ref} from "vue"
 import {useStore} from "vuex"
 import {useRouter} from "vue-router";
-
+import btrBootm from "../components/bottombae.vue"
 
 
 const from = reactive({
@@ -61,7 +62,8 @@ const handleSubmit = () => {
 </script>
 
 <style >
-body {
+.sss {
+  height: 100%;
   background-image: url('/src/assets/img/baner.jpeg');
   background-repeat: no-repeat;
   background-size: cover;

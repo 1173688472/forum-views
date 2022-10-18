@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="cccc">
     <div class="login-box">
       <h2>欢迎登录</h2>
       <form style="white-space: nowrap;margin: 0 auto">
@@ -31,8 +31,10 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a @click="$router.replace('/login')">返回登录</a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </form>
     </div>
+    <btrBootm style="position: absolute;bottom: 0;width: 100%;text-align: center;"></btrBootm>
   </div>
 </template>
 
@@ -41,7 +43,7 @@ import {message} from 'ant-design-vue'
 import {reactive, ref} from "vue"
 import {useStore} from "vuex"
 import {useRouter} from "vue-router";
-
+import btrBootm from "../components/bottombae.vue"
 const from = reactive({
   name:'',
   passwordTwo:'',
@@ -71,7 +73,8 @@ const signUp_asd = () => {
 </script>
 
 <style scoped>
-body {
+.cccc {
+  height: 100%;
   background-image: url('../src/assets/img/baner.jpeg');
   background-repeat: no-repeat;
   background-size: 100%;
