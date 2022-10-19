@@ -34,8 +34,10 @@
 
 <script setup>
 import {SettingOutlined, EditOutlined, EllipsisOutlined} from '@ant-design/icons-vue';
+import {useRouter} from "vue-router";
+const router =useRouter()
 const toarticle = () => {
-  console.log('ww')
+  router.push('article')
 }
 
 

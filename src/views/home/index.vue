@@ -7,7 +7,6 @@
       </a-card>
       <a-card  style="margin:1rem 0;" v-for="i in 5">
         <artiCle ></artiCle>
-
         <div style="height: 5rem;"></div>
       </a-card>
       <btmBar style="width: 100%;text-align: center" ></btmBar>

@@ -2,7 +2,7 @@
   <div class="continers">
     <div class="continer_left" style="width: 25%;">
       <img alt="" src="../assets/img/lol.png" style="margin: 0 1rem">
-      <span style="letter-spacing:1px;color: #22ada9">联盟论坛</span>
+      <span style="letter-spacing:1px;color: #22ada9">煮酒论谈</span>
     </div>
     <div class="container_search" style="width: 50%;">
 

@@ -2,7 +2,7 @@ import service from "../axios.js"
 
 
 export const getlogin = data => service({
-    url: `/user/login`,
+    url: `api/user/login`,
     method: "post",
     data
 })

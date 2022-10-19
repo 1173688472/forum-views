@@ -75,7 +75,7 @@ const signUp_asd = () => {
 <style scoped>
 .cccc {
   height: 100%;
-  background-image: url('../src/assets/img/baner.jpeg');
+  background-image: url('/src/assets/img/baner.jpeg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 0px -50px;
