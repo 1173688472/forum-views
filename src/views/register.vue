@@ -1,7 +1,7 @@
 <template>
-  <div class="cccc">
-    <div class="login-box">
-      <h2>欢迎登录</h2>
+  <div >
+<!--    <div class="login-box">-->
+<!--      <h2>欢迎登录</h2>-->
       <form style="white-space: nowrap;margin: 0 auto">
         <div class="user-box">
           <input v-model="from.name" autocomplete="" required="" type="text">
@@ -20,7 +20,7 @@
           <input v-model="from.passwordTwo" autocomplete="" required="" type="password">
           <label>请再次确定密码</label>
         </div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="btn-handle">
         <a @click="handleSubmit">
           <span></span>
           <span></span>
@@ -28,14 +28,12 @@
           <span></span>
           确定注册
         </a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a @click="$router.replace('/login')">返回登录</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
+        <a @click="back">返回登录</a>
+        </div>
       </form>
     </div>
-    <btrBootm style="position: absolute;bottom: 0;width: 100%;text-align: center;"></btrBootm>
-  </div>
+<!--    <btrBootm style="position: absolute;bottom: 0;width: 100%;text-align: center;"></btrBootm>-->
+<!--  </div>-->
 </template>
 
 <script setup>
@@ -43,6 +41,7 @@ import {message} from 'ant-design-vue'
 import {reactive, ref} from "vue"
 import {useStore} from "vuex"
 import {useRouter} from "vue-router";
+import {defineEmits} from "vue";
 import btrBootm from "../components/bottombae.vue"
 const from = reactive({
   name:'',
@@ -53,6 +52,8 @@ const from = reactive({
 //登录判断
 const store =useStore()
 const router=useRouter()
+let emit = defineEmits(['backLogin'])
+
 const handleSubmit = () => {
   if (!from.username || !from.password||!from.passwordTwo||!from.name) {
     message.error('账号,用户名和密码不能为空')
@@ -65,7 +66,9 @@ const handleSubmit = () => {
   }
 }
 
-
+const back = () => {
+  emit('backLogin')
+}
 const signUp_asd = () => {
   message.success('登录成功！')
 }
@@ -135,8 +138,12 @@ const signUp_asd = () => {
   color: #03e9f4;
   font-size: 12px;
 }
-
-.login-box form a {
+.btn-handle{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2,50%);
+}
+ form a {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -147,7 +154,8 @@ const signUp_asd = () => {
   overflow: hidden;
   transition: .5s;
   margin-top: 40px;
-  letter-spacing: 4px
+  letter-spacing: 4px;
+   text-align: center;
 }
 
 .login-box a:hover {
