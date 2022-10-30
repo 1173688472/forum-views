@@ -85,6 +85,7 @@ const handleSubmit = () => {
     message.error('账号和密码不能为空')
   } else {
     store.dispatch('login', from).then(res => {
+      if(res.message!='ok') return message.error('登录失败！')
       console.log(res,'resssq')
       message.success('登录成功！')
       router.push('/page')

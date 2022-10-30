@@ -4,20 +4,20 @@
 <!--      <h2>欢迎登录</h2>-->
       <form style="white-space: nowrap;margin: 0 auto">
         <div class="user-box">
-          <input v-model="from.name" autocomplete="" required="" type="text">
+          <input v-model="from.userName" autocomplete="" required="" type="text">
           <label>请输入用户名</label>
         </div>
         <div class="user-box">
-          <input v-model="from.username" autocomplete="" required="" type="text">
+          <input v-model="from.userAccount" autocomplete="" required="" type="text">
           <label>请输入账号</label>
         </div>
         <div class="user-box">
-          <input v-model="from.password"  autocomplete="" required="" type="password">
+          <input v-model="from.userPassword"  autocomplete="" required="" type="password">
           <label>请输入密码</label>
         </div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div class="user-box">
-          <input v-model="from.passwordTwo" autocomplete="" required="" type="password">
+          <input v-model="from.checkPassword" autocomplete="" required="" type="password">
           <label>请再次确定密码</label>
         </div>
         <div class="btn-handle">
@@ -42,27 +42,32 @@ import {reactive, ref} from "vue"
 import {useStore} from "vuex"
 import {useRouter} from "vue-router";
 import {defineEmits} from "vue";
+import {getRegisterAPI} from "../api/index.js"
 import btrBootm from "../components/bottombae.vue"
 const from = reactive({
-  name:'',
-  passwordTwo:'',
-  username: '',
-  password: ''
+  userName:'',
+  userAccount: '',
+  userPassword: '',
+  checkPassword:'',
 })
 //登录判断
 const store =useStore()
 const router=useRouter()
 let emit = defineEmits(['backLogin'])
 
-const handleSubmit = () => {
-  if (!from.username || !from.password||!from.passwordTwo||!from.name) {
+const handleSubmit = async () => {
+  if (!from.userName || !from.userAccount||!from.userPassword||!from.checkPassword) {
     message.error('账号,用户名和密码不能为空')
   } else {
     //注册接口
+    const res = await getRegisterAPI(from)
+    console.log(res.code,'res')
+    if(res.message!='ok') return message.error('登录失败！')
+    // window.location.reload()
+    message.success('注册成功，请先登录！')
     //   router.push('/page')  // }).finally(() => {
     //   //请求结束之后
     // })
-
   }
 }
 
